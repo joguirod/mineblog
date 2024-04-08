@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Minecraft';
-    src: url('/minecraft_font.ttf') format('truetype'); /* Formato WOFF 2.0 */
+    font-family: "Minecraft";
+    src: url('fontes/minecraft_font.ttf') format('truetype'); /* Formato WOFF 2.0 */
 }
 
 body {
