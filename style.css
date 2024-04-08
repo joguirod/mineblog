@@ -1,11 +1,8 @@
-@font-face {
-    font-family: "Minecraft";
-    src: url('fontes/minecraft_font.ttf') format('truetype'); /* Formato WOFF 2.0 */
-}
+@import url('https://fonts.cdnfonts.com/css/minecraftia');
 
 body {
     margin: 0;
-    font-family: 'Minecraft';
+    font-family: 'Minecraftia',sans-serif;
     line-height: 1.5;
 }
 
