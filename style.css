@@ -40,8 +40,18 @@ main {
 }
 
 #sobre h2 {
+    color: rgb(46, 177, 6);
+    border-bottom: 2px solid rgb(46, 177, 6)
+}
+
+#encantamentos h2 {
     color: indigo;
     border-bottom: 2px solid indigo
+}
+
+#encantamentos a {
+    padding-left: 330px;
+
 }
 
 #contato h2 {
