@@ -124,3 +124,25 @@ nav a:hover, a:active {
     text-align: center; /* Alinha o texto ao centro do cabeçalho */
     padding: 40px;
 }
+
+
+#mods a{
+    color: rgb(44, 186, 168)
+}
+
+#mods h2{
+    color: rgb(17, 160, 54);
+    border-bottom: 2px solid rgb(17, 160, 54);
+}
+
+.mod{
+    padding-left:3%;
+}
+
+.mod-description {
+    display: none;
+}
+
+.mod-description:target {
+    display: block;
+}
