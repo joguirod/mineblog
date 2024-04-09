@@ -81,7 +81,7 @@ main {
 #guide_links a:link, #guide_links a:visited {
     list-style-type: none;
     padding: 0;
-    color: rgb(255, 170, 0);
+    color: rgb(97, 54, 14);
     text-decoration: underline;
 }
 
