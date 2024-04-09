@@ -22,7 +22,6 @@ article {
 
 
 h2 {
-    border-bottom: 2px solid rgb(255, 255, 255);
     padding-left: 2%;
     padding-bottom: 1%;
 }
@@ -36,9 +35,18 @@ main {
     color: rgb(97, 54, 14);
 }
 
+#guia h2 {
+    border-bottom: 2px solid rgb(97, 54, 14);
+}
+
 #sobre h2 {
     color: indigo;
     border-bottom: 2px solid indigo
+}
+
+#contato h2 {
+    color: rgb(255, 170, 0);
+    border-bottom: 2px solid rgb(255, 170, 0);
 }
 
 #cabecalho {
@@ -57,10 +65,23 @@ main {
     text-align: left;
 }
 
-#guide_links a:link, #guide_links a:visited {
+#lista_contatos ul li{
+    display: block;
+    color: black;
+    text-align: left;
+}
+
+#lista_contatos a:link, #lista_contatos a:visited {
     list-style-type: none;
     padding: 0;
     color: rgb(211, 149, 98);
+    text-decoration: none;
+}
+
+#guide_links a:link, #guide_links a:visited {
+    list-style-type: none;
+    padding: 0;
+    color: rgb(255, 170, 0);
     text-decoration: underline;
 }
 
