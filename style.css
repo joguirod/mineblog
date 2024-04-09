@@ -156,3 +156,15 @@ nav a:hover, a:active {
 .mod-description:target {
     display: block;
 }
+
+.acoes, .id-linha {
+    text-align: center;
+    color: #0054a8;
+}
+
+.acoes, .id-sobre {
+    font-size: small;
+    color: rgb(59, 59, 59);
+    padding-left:2%;
+
+}
