@@ -84,18 +84,153 @@
                 </div>
             </section>
         </article>
+        <article>
+            <section id="posts">
+                <h2>Avaliações</h2>
+                <div id="post-container">
+                    <div class="post">
+                        <div class="book-icon">
+                            <h3 class="post-title">Avaritia</h3>
+                            <img src="images/livrocompena.jpg" alt="Book Icon" onclick="openPost('post1')">
+                            <p class="author-name">Thiago</p>
+                        </div>
+                        <div id="post1" class="post-content">
+                            <p>Complexidade extrema: Avaritia é conhecido por ser um mod extremamente complexo, adicionando uma tonelada de novos itens e mecânicas ao jogo.
+                                Foco na endgame: Este mod é especialmente voltado para jogadores que procuram desafios de endgame, com equipamentos e recursos que são difíceis de obter, mas extremamente poderosos.
+                                Crafting Ridículo: Avaritia introduz receitas de criação absurdamente caras, exigindo uma grande quantidade de recursos de outros mods ou mecânicas avançadas para serem produzidos. Isso adiciona um elemento de prestígio para os jogadores que conseguem fabricar esses itens.
+                            </p>
+                            <button onclick="closePost('post1')">Fechar</button>
+                        </div>
+                    </div> 
+                    <div class="post">
+                        <div class="book-icon">
+                            <h3 class="post-title">Orespawn</h3>
+                            <img src="images/livrocompena.jpg" alt="Book Icon" onclick="openPost('post2')">
+                            <p class="author-name">José</p>
+                        </div>
+                         <div id="post2" class="post-content">
+                            <p>Variedade de conteúdo: OreSpawn é conhecido por sua enorme variedade de mobs, itens, armas e armaduras. Ele adiciona uma quantidade massiva de conteúdo ao jogo, expandindo significativamente as opções disponíveis para os jogadores.
+                                Mundos dimensionais: Além disso, OreSpawn inclui novas dimensões para explorar, adicionando mais profundidade ao mundo do Minecraft e oferecendo aos jogadores novas aventuras e desafios.
+                                Bosses Épicos: Um dos aspectos mais emocionantes do OreSpawn são os chefes épicos que os jogadores podem enfrentar. Esses chefes são extremamente desafiadores e geralmente exigem estratégia e preparação para serem derrotados.
+                            </p>
+                            <button onclick="closePost('post2')">Fechar</button>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="book-icon">
+                            <h3 class="post-title">Mekanism</h3>
+                            <img src="images/livrocompena.jpg" alt="Book Icon" onclick="openPost('post3')">
+                            <p class="author-name">João</p>
+                        </div>
+                        <div id="post3" class="post-content">
+                            <p>Tecnologia Avançada: Mekanism é um mod centrado na tecnologia, adicionando uma variedade de máquinas e sistemas de automação ao jogo. Isso permite aos jogadores explorar novas formas de automatizar processos e melhorar sua eficiência.
+                                Energia diversificada: Uma característica única do Mekanism é sua variedade de tipos de energia, incluindo eletricidade, gás e até mesmo fusão nuclear. Isso adiciona uma camada extra de complexidade e estratégia para os jogadores que desejam maximizar a eficiência de suas operações.
+                                Integração com outros mods: Mekanism é conhecido por sua excelente integração com outros mods, permitindo que os jogadores combinem suas máquinas e sistemas de energia com outros aspectos do jogo para criar experiências de jogo personalizadas e complexas.
+                            </p>
+                            <button onclick="closePost('post3')">Fechar</button>
+                        </div>
+                    </div>
+                </div>    
+                <div id="new-post-form" style="display: none;">
+                    <div class="input-group">
+                        <label for="title">Título:</label>
+                        <input type="text" id="title" name="title">
+                    </div>
+                    <div class="input-group">
+                        <label for="author">Autor:</label>
+                        <input type="text" id="author" name="author">
+                    </div>
+                    <div class="input-group">
+                        <label for="content">Conteúdo:</label>
+                        <textarea id="content" name="content"></textarea>
+                    </div>
+                    <button onclick="createPost()">Criar Avaliação</button>
+                </div>
+            </section>
+            <button id="new-post-btn" onclick="showForm()">Nova Avaliação</button>
+        </article>
     </main>
     <footer id="rodape">
         <p>Desenvolvido por TJJ</p>
     </footer>
+    <!-- JS para mostrar a descrição dos mods -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+            $('.mod-description').hide()
             $('.mod-name').click(function(e) {
-                e.preventDefault();
-                $(this).parent().next().slideToggle('fast');
+                e.preventDefault()
+                $(this).parent().next().slideToggle('fast')
             });
         });
+    </script>
+    <!-- JS para criar os pots -->
+    <script>
+        function showForm() {
+            document.getElementById('new-post-form').style.display = 'block'
+        }
+
+        function createPost() {
+            var title = document.getElementById('title').value
+            var author = document.getElementById('author').value
+            var content = document.getElementById('content').value
+        
+            var post = document.createElement('div')
+            post.className = 'post'
+
+            var postTitle = document.createElement('h3')
+            postTitle.className = 'post-title'
+            postTitle.textContent = title
+            post.appendChild(postTitle)
+    
+            var bookIcon = document.createElement('div')
+            bookIcon.className = 'book-icon'
+            
+            var img = document.createElement('img')
+            img.src = 'images/livrocompena.jpg'
+            img.alt = 'Book Icon';
+            bookIcon.appendChild(img);
+        
+            var authorName = document.createElement('p')
+            authorName.className = 'author-name'
+            authorName.textContent = author
+            bookIcon.appendChild(authorName)
+        
+            var postContent = document.createElement('div')
+            postContent.id = 'post' + Date.now()
+            postContent.className = 'post-content'
+            postContent.style.display = 'none'
+        
+            var postText = document.createElement('p')
+            postText.textContent = content
+            postContent.appendChild(postText)
+        
+            var closeButton = document.createElement('button')
+            closeButton.textContent = 'Fechar'
+            closeButton.onclick = function() { closePost(postContent.id) }
+            postContent.appendChild(closeButton)
+        
+            post.appendChild(bookIcon)
+            post.appendChild(postContent)
+        
+            document.getElementById('post-container').appendChild(post)
+        
+            bookIcon.onclick = function() { openPost(postContent.id) }
+        
+            document.getElementById('author').value = ''
+            document.getElementById('content').value = ''
+            document.getElementById('new-post-form').style.display = 'none'
+        }
+
+        function openPost(postId) {
+            var postContent = document.getElementById(postId)
+            postContent.style.display = 'block'
+        }
+
+        function closePost(postId) {
+            var postContent = document.getElementById(postId)
+            postContent.style.display = 'none'
+        }
     </script>
 
 </body>
