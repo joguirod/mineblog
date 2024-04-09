@@ -39,6 +39,11 @@ main {
     color: rgb(97, 54, 14);
 }
 
+#sobre h2 {
+    color: indigo;
+    border-bottom: 2px solid indigo
+}
+
 #cabecalho {
     text-align: center;
     padding: 70px;
@@ -56,12 +61,9 @@ main {
 }
 
 #guide_links a:link, #guide_links a:visited {
+    list-style-type: none;
+    padding: 0;
     color: rgb(211, 149, 98);
-    text-decoration: none;
-}
-
-#guide_links a:hover {
-    color: rgb(97, 54, 14);
     text-decoration: underline;
 }
 
@@ -72,12 +74,12 @@ nav li {
 }
 
 nav a:link, nav a:visited {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
-}   
+}
 
-nav a:hover {
-    color: white;
+nav a:hover, a:active {
+    color: indigo;
     text-decoration: underline;
 }
 
